@@ -4,9 +4,9 @@ from appdemanda.views import actor, demandado, expediente, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index ),
-    path('actor/', actor),
-    path('demandado/', demandado),
-    path('expediente/', expediente),
+    path('', index, name = "index" ),
+    path('actor/', actor, name = "actor"),
+    path('demandado/', demandado, name = "demandado"),
+    path('expediente/', expediente, name = "expediente"),
     
 ]

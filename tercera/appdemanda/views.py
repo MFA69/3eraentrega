@@ -5,13 +5,14 @@ from .models import Actor, Demandado, Expediente
 # Create your views here.
 
 def actor (request):
-    return render (request, 'actor.html'),
+    return render (request, "actor.html")
 
 def demandado (request):
-    return render (request, 'demandado.html')
+    return render (request, "demandado.html")
 
 def expediente (request):
-    return render (request, 'expediente.html')
+    return render (request, "expediente.html")
 
 def index (request):
-    return render (request, 'index.html')
+    return render (request, "index.html")
+
