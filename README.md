@@ -29,8 +29,6 @@ creo la carpeta templates, y creo los html actor, demandado, expediente
 
 subo a github lo hecho hasta ahora, git add *, git commit -m 'appdemanda1', git push
 
-
-
 descargo el bootstrap y agrego a la carpeta template el index.html
 
 creo la carpeta static y agrego las carpetas assets, cdd y js
