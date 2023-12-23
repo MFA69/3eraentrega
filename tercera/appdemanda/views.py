@@ -15,7 +15,8 @@ def formularioActor (request):
             nombre = datos.get("nombre")
             actor = Actor(apellido=apellido.title(),nombre=nombre.title())
             actor.save()
-            return render (request, 'index.html')
+            #return render (request, 'index.html')
+            return render (request, 'ingreso_actor.html')
     else:
         miformulario = Formulario_actor()
 
@@ -31,7 +32,7 @@ def formularioDemandado (request):
             nombre = datos.get("nombre")
             demandado = Demandado(apellido=apellido.title(),nombre=nombre.title())
             demandado.save()
-            return render (request, 'index.html')
+            return render (request, 'ingreso_demandado.html')
     else:
         miformulario = Formulario_demandado()
 
@@ -48,7 +49,7 @@ def formularioExpediente (request):
             presentado = request.POST.get ("presentado")
             expediente = Expediente (numero = numero, presentado = presentado)
             expediente.save()
-            return render (request, 'index.html')
+            return render (request, 'ingreso_expediente.html')
     else:
         miformulario = Formulario_expediente()
 

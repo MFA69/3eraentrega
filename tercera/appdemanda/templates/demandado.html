@@ -16,12 +16,13 @@
 
         <div style="margin-left: 20%;">
 
-        <table style="color: aliceblue;">
+            <table style="color: aliceblue;">
 
-            {{ miformulario.as_table }}
+                {{ miformulario.as_table }}
         
-        </table>
+            </table>
         </div>
+        
         <br>
 
         <input type="submit" value="Enviar">
@@ -34,7 +35,6 @@
 
     <h1> Buscar un demandado </h1>
 
-    
     <br>
 
     <form action="{%url 'busqueda_demandado_respuesta' %}" method="get">
@@ -50,7 +50,7 @@
         <input type="submit" value="Buscar">
 
         </div>
+
     </form>
     
-
 {% endblock %}

@@ -11,26 +11,25 @@
 
     {% if expediente %}
     
-       
+    {% for expediente in expediente %}
 
-        {% for expediente in expediente %}
+    <li>N° {{expediente.numero}} -  presentado: {{expediente.presentado}}</li>
+ 
+    {% endfor %}
 
-            <li>N° {{expediente.numero}} -  presentado: {{expediente.presentado}}</li>
+    <br>
 
-     
-        {% endfor %}
-        <br>
     {% else %}
-        <p>No se encontraron resultados.</p>
+
+    <p>No se encontraron resultados.</p>
+
     {% endif %}
 
-    <div style="margin: 3em;">
+    <div style="margin: 1%;">
 
-    <a style="text-decoration: none" href="{% url "expediente" %}"><input type="submit" value="Volver" href="{% url "expediente" %}"></a>
+    <a style="text-decoration: none" href="{% url "expediente" %}"><input type="submit" value="Volver"></a>
 
     </div>
-
-
 
 </body>
 </html>

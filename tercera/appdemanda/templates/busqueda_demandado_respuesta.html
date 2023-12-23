@@ -10,24 +10,24 @@
     <h2>Resultados de la busqueda por demandado</h2>
 
     {% if demandado %}
-     
-    
 
-        {% for demandado in demandado %}
+    {% for demandado in demandado %}
 
-            <li>{{demandado.apellido}}, {{demandado.nombre}}</li>
+    <li>{{demandado.apellido}}, {{demandado.nombre}}</li>
             
-    
-    
-        {% endfor %}
+    {% endfor %}
+
     <br>    
+
     {% else %}
-         <p >No se encontraron resultados.</p>
+
+    <p >No se encontraron resultados.</p>
+
     {% endif %}
 
-    <div style="margin: 3em;">
+    <div style="margin: 1%;">
 
-     <a style="text-decoration: none" href="{% url "demandado" %}"><input type="submit" value="Volver" href="{% url "demandado" %}"></a>
+    <a style="text-decoration: none" href="{% url "demandado" %}"><input type="submit" value="Volver"></a>
 
     </div>
 
