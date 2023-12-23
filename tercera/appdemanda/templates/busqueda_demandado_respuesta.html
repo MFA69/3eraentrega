@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado busqueda demandado</title>
+</head>
+<body>
+
+    <h2>Resultados de la busqueda por demandado</h2>
+
+    {% if demandado %}
+     
+    
+
+        {% for demandado in demandado %}
+
+            <li>{{demandado.apellido}}, {{demandado.nombre}}</li>
+            
+    
+    
+        {% endfor %}
+    <br>    
+    {% else %}
+         <p >No se encontraron resultados.</p>
+    {% endif %}
+
+    <div style="margin: 3em;">
+
+     <a style="text-decoration: none" href="{% url "demandado" %}"><input type="submit" value="Volver" href="{% url "demandado" %}"></a>
+
+    </div>
+
+</body>
+</html>

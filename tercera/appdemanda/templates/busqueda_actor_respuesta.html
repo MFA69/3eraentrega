@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado busqueda actor</title>
+</head>
+<body>
+
+    <h2>Resultados de la busqueda por actor</h2>
+
+    {% if actor %}
+     
+    
+
+    {% for actor in actor %}
+
+    <li>{{actor.apellido}}, {{actor.nombre}}</li>
+           
+
+    {% endfor %}
+      
+    {% else %}
+        <p>No se encontraron resultados.</p>
+
+    {% endif %}
+
+    <div style="margin: 3em;">
+
+    <a style="text-decoration: none" href="{% url "actor" %}"><input type="submit" value="Volver" href="{% url "actor" %}"></a>
+    </div>
+
+</body>
+</html>

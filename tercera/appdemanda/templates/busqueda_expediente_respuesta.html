@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado busqueda expediente</title>
+</head>
+<body>
+
+    <h2>Resultados de la busqueda por expediente</h2>
+
+    {% if expediente %}
+    
+       
+
+        {% for expediente in expediente %}
+
+            <li>n. {{expediente.numero}},  presentado el {{expediente.presentado}}</li>
+
+     
+        {% endfor %}
+        <br>
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+
+    <div style="margin: 3em;">
+
+    <a style="text-decoration: none" href="{% url "expediente" %}"><input type="submit" value="Volver" href="{% url "expediente" %}"></a>
+
+    </div>
+
+
+
+</body>
+</html>

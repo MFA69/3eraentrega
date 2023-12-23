@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Demandado</title>
+</head>
+<body>
+    
+    {% if miformulario.errors %}
+
+    <p style="color: aqua;">Los datos son erroneos</p>
+
+    {% endif %}
+
+    <form action="" method ="POST">{% csrf_token %}
+
+        <table>
+
+
+            {{ miformulario.as_table }}
+        
+        </table>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+
+</body>
+</html>

@@ -4,4 +4,50 @@
 
     <h1 style="color: aliceblue;"> Contenido Demandado </h1>
 
+    {% if miformulario.errors %}
+
+    <p style="color: aqua;">Los datos son erroneos</p>
+
+    {% endif %}
+
+    <h2 style="color: aliceblue;">Ingreso de datos de un nuevo Demandado </h2>
+    
+    <br>
+
+    <form action="" method ="POST">{% csrf_token %}
+
+        <div style="margin-left: 20%;">
+
+        <table style="color: aliceblue;">
+
+            {{ miformulario.as_table }}
+        
+        </table>
+        </div>
+        <br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+{% endblock %}
+
+{% block contbusqueda %}
+
+    <h1> Buscar un demandado </h1>
+
+    
+    <br>
+
+    <form action="{%url 'busqueda_demandado_respuesta' %}" method="get">
+        <label for="nombre">Por Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+    
+        <label for="apellido">Por Apellido:</label>
+        <input type="text" name="apellido" id="apellido">
+    
+        <input type="submit" value="Buscar">
+    </form>
+    
+
 {% endblock %}
