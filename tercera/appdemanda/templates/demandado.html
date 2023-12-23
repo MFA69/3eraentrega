@@ -2,8 +2,6 @@
 {% load static %}
 {% block content %}
 
-    <h1 style="color: aliceblue;"> Contenido Demandado </h1>
-
     {% if miformulario.errors %}
 
     <p style="color: aqua;">Los datos son erroneos</p>
@@ -40,13 +38,18 @@
     <br>
 
     <form action="{%url 'busqueda_demandado_respuesta' %}" method="get">
+        
+        <label for="apellido">Por Apellido:</label>
+        <input type="text" name="apellido" id="apellido">
+
         <label for="nombre">Por Nombre:</label>
         <input type="text" name="nombre" id="nombre">
     
-        <label for="apellido">Por Apellido:</label>
-        <input type="text" name="apellido" id="apellido">
+        <div style="margin : 3%">
     
         <input type="submit" value="Buscar">
+
+        </div>
     </form>
     
 

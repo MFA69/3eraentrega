@@ -2,8 +2,6 @@
 {% load static %}
 {% block content %}
 
-    <h1 style="color: aliceblue;"> Contenido Expediente </h1>
-
 {% if miformulario.errors %}
 
     <p style="color: aqua;">Los datos son erroneos</p>
@@ -20,7 +18,7 @@
 
         <table style="color: aliceblue;">
 
-            {{ miformulario2.as_table }}
+            {{ miformulario.as_table }}
         
         </table>
         </div>
@@ -46,7 +44,11 @@
         <label for="presentado">Por fecha de presentacion:</label>
         <input type="date" name="presentado" id="presentado">
     
-        <input type="submit" value="Buscar">
+        <div style="margin : 3%">
+    
+            <input type="submit" value="Buscar">
+    
+        </div>
     </form>
     
 

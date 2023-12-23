@@ -10,10 +10,10 @@ def formularioActor (request):
         miformulario = Formulario_actor (request.POST)
         if miformulario.is_valid():
             datos = miformulario.cleaned_data
-            print (datos)
+            #print (datos)
             apellido = datos.get("apellido")
             nombre = datos.get("nombre")
-            actor = Actor(apellido=apellido,nombre=nombre)
+            actor = Actor(apellido=apellido.title(),nombre=nombre.title())
             actor.save()
             return render (request, 'index.html')
     else:
@@ -26,10 +26,10 @@ def formularioDemandado (request):
         miformulario = Formulario_demandado (request.POST)
         if miformulario.is_valid():
             datos = miformulario.cleaned_data
-            print (datos)
+            #print (datos)
             apellido = datos.get("apellido")
             nombre = datos.get("nombre")
-            demandado = Demandado(apellido=apellido,nombre=nombre)
+            demandado = Demandado(apellido=apellido.title(),nombre=nombre.title())
             demandado.save()
             return render (request, 'index.html')
     else:
@@ -40,19 +40,19 @@ def formularioDemandado (request):
 
 def formularioExpediente (request):
     if request.method == 'POST':
-        miformulario2 = Formulario_expediente (request.POST)
-        print(miformulario2)
-        if miformulario2.is_valid():
-            datos = miformulario2.cleaned_data
+        miformulario = Formulario_expediente (request.POST)
+        #print(miformulario)
+        if miformulario.is_valid():
+            datos = miformulario.cleaned_data
             numero = request.POST.get ("numero")
             presentado = request.POST.get ("presentado")
             expediente = Expediente (numero = numero, presentado = presentado)
             expediente.save()
             return render (request, 'index.html')
     else:
-        miformulario2 = Formulario_expediente()
+        miformulario = Formulario_expediente()
 
-    return render (request, "expediente.html", {"miformulario2" : miformulario2})
+    return render (request, "expediente.html", {"miformulario" : miformulario})
 
 def buscar_actor(request):
     if request.method == "GET":
