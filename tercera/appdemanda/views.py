@@ -1,48 +1,44 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Actor, Demandado, Expediente
-from .forms import Formulario_demandado, Formulario_expediente, Formulario_actor
+from .forms import FormularioDemandado, FormularioExpediente, FormularioActor
 
 # Create your views here.
 
-def formularioActor (request):
+def formulario_actor (request):
     if request.method == 'POST':
-        miformulario = Formulario_actor (request.POST)
+        miformulario = FormularioActor (request.POST)
         if miformulario.is_valid():
             datos = miformulario.cleaned_data
-            #print (datos)
             apellido = datos.get("apellido")
             nombre = datos.get("nombre")
             actor = Actor(apellido=apellido.title(),nombre=nombre.title())
             actor.save()
-            #return render (request, 'index.html')
             return render (request, 'ingreso_actor.html')
     else:
-        miformulario = Formulario_actor()
+        miformulario = FormularioActor()
 
     return render (request, "actor.html", {"miformulario" : miformulario})
 
-def formularioDemandado (request):
+def formulario_demandado (request):
     if request.method == 'POST':
-        miformulario = Formulario_demandado (request.POST)
+        miformulario = FormularioDemandado (request.POST)
         if miformulario.is_valid():
             datos = miformulario.cleaned_data
-            #print (datos)
             apellido = datos.get("apellido")
             nombre = datos.get("nombre")
             demandado = Demandado(apellido=apellido.title(),nombre=nombre.title())
             demandado.save()
             return render (request, 'ingreso_demandado.html')
     else:
-        miformulario = Formulario_demandado()
+        miformulario = FormularioDemandado()
 
     return render (request, "demandado.html", {"miformulario" : miformulario})
 
 
-def formularioExpediente (request):
+def formulario_expediente (request):
     if request.method == 'POST':
-        miformulario = Formulario_expediente (request.POST)
-        #print(miformulario)
+        miformulario = FormularioExpediente (request.POST)
         if miformulario.is_valid():
             datos = miformulario.cleaned_data
             numero = request.POST.get ("numero")
@@ -51,7 +47,7 @@ def formularioExpediente (request):
             expediente.save()
             return render (request, 'ingreso_expediente.html')
     else:
-        miformulario = Formulario_expediente()
+        miformulario = FormularioExpediente()
 
     return render (request, "expediente.html", {"miformulario" : miformulario})
 
