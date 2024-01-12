@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <h2 >Registrate </h2>
+
+    <form action="" method ="POST">{% csrf_token %}
+
+            {{ form.as_p}}
+        
+        <input type="submit" value="Ingresar">
+
+    </form>
+
+    <br>
+    
+    <a style="text-decoration: none" href="{% url "index" %}"><input type="submit" value="Volver"></a>
+
+</body>
+</html>

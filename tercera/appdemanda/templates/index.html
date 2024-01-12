@@ -4,4 +4,34 @@
 
     <h1 style="color: aliceblue;"> Arma tu propia base de datos </h1>
 
+    <br>
+
+    <h2 style="color: rgb(233, 75, 75);">{{mensaje}}</h2>
+
+{% endblock %}
+
+{% block contcrud %}
+
+<h2>Listados completo</h2>
+
+<h3><a style="text-decoration: none" href="actores_lista" >Ver todos los actores</h3>
+
+<h3><a style="text-decoration: none" href="demandados_lista" >Ver todos los demandados</h3>
+
+<h3><a style="text-decoration: none" href="expedientes_lista" >Ver todos los expedientes</h3>
+
+<!--
+<h3><a style="text-decoration: none" href="leerActores" >Ver todos los actores (por vista)</h3>
+
+<h3><a style="text-decoration: none" href="leerDemandados" >Ver todos los demandados</h3>
+
+<h3><a style="text-decoration: none" href="leerExpedientes" >Ver todos los expedientes</h3>
+-->
+
+{% endblock %}
+
+{% block blockadmin %}
+
+<a style="text-decoration: none" href="../admin"><h2 class="fw-bolder">Admin</h2></a>
+
 {% endblock %}

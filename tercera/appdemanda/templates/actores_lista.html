@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Lista Actores</title>
+</head>
+<body>
+    {% for p in object_list %}
+    <li>{{p}}</li>
+    <button>
+    <a href="{% url 'eliminar_actor' p.apellido %}"> Eliminar</a>
+    <!--<a href="{% url 'eliminar_actor' p.id %}"> Eliminar</a>-->
+    </button>
+    <button>
+    <a href="{% url 'editar_actor' p.apellido %}"> Editar</a>
+    </button>
+    {% endfor %}
+   
+
+ <h3><a style="text-decoration: none" href="{% url "actor" %}">Agregar nuevo actor</a></h3>
+
+ <h3><a style="text-decoration: none" href="{% url "index" %}">Volver pagina principal</a></h3>
+
+ 
+
+</body>
+</html>
