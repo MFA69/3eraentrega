@@ -24,9 +24,10 @@ class Demandado(models.Model):
     
 class Expediente(models.Model):
     numero = models.IntegerField()
+    #presentado = models.DateField()
     presentado = models.DateField()
     class Meta:
         ordering = ['presentado']
 
     def __str__(self):
-        return f'n° expediente {self.numero}, año {self.presentado}'
+        return f'Expediente n° {self.numero}, año {self.presentado}'

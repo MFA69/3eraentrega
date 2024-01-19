@@ -2,16 +2,18 @@ from django import forms
 
 
 class FormularioActor(forms.Form):
-    apellido = forms.CharField(max_length=20)
-    nombre = forms.CharField(max_length=20)
+    apellido = forms.CharField(max_length=20, widget= forms.TextInput (attrs={'placeholder':'apellido'}))
+    nombre = forms.CharField(max_length=20, widget= forms.TextInput (attrs={'placeholder':'nombre'}))
 
 class FormularioDemandado(forms.Form):
-    apellido = forms.CharField(max_length=20)
-    nombre = forms.CharField(max_length=20)
+    apellido = forms.CharField(max_length=20, widget= forms.TextInput (attrs={'placeholder':'apellido'}))
+    nombre = forms.CharField(max_length=20, widget= forms.TextInput (attrs={'placeholder':'nombre'}))
 
 class FormularioExpediente(forms.Form):
-    numero = forms.IntegerField()
-    presentado = forms.DateField()
+    numero = forms.IntegerField(widget= forms.TextInput (attrs={'placeholder':'numero expediente'}))
+    #presentado = forms.DateField()
+    presentado = forms.DateField(widget= forms.TextInput (attrs={'placeholder':'aaaa-mm-dd'}))
+                           
 
 #class UserRegisterForm(UserCreationForm):
     #email = forms.EmailField()

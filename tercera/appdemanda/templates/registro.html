@@ -1,3 +1,21 @@
+{% extends 'padre.html' %}
+{% load static %}
+{% block contbusqueda %}
+
+<h2>REGISTRA TU USUARIO </h2>
+
+<form action="{% url 'registro' %}" method ="POST">{% csrf_token %}
+    <table>
+
+        {{ form.as_p}}
+    </table>
+    <input type="submit" value="Registrate">
+
+</form>
+    
+{% endblock %}
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,3 +40,4 @@
     
 </body>
 </html>
+-->

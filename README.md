@@ -1,5 +1,5 @@
-# 3eraentrega
-Tercera pre-entrega Fernandez Alias
+# Entrega Final
+Entrega final Fernandez Alias
 
 
 la app tiene 3 clases actor (atributos apellido y nombre), demandado (atributos apellido y nombre) y 
@@ -17,5 +17,12 @@ mas abajo, tambien en su propia pagina, se puede buscar actor, por nombre o apel
 se puede buscar demandado por nombre o apellido y se puede buscar un expediente por numero o fecha de presentacion
 cada una te lleva a otra pagina con el o los resultados o en su defecto te avisa que no se encontraron resultados,
 en todas las opciones tiene un boton para volver a la pagina anterior
+
+te permite registrarte y loguearte, es la unica forma de agregar, borrar o editar estando logueado
+
+a su vez te permite ingresa en el link para el about
+
+finalmente en el index, hay un link para el ADMIN y se puede hacer el CRUD, tirar el listado de actor, demandado o expediente y dentro 
+del listado se puede eliminar o editar, o se puede ir al link para agregar correspondiente
 
 

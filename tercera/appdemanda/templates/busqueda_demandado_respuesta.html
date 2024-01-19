@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+{% extends 'padre.html' %}
+{% load static %}
+{% block contbusqueda %}
+
+<h2>Resultados de la busqueda por demandado</h2>
+
+{% if demandado %}
+
+{% for demandado in demandado %}
+
+<li>{{demandado.apellido}}, {{demandado.nombre}}</li>
+        
+{% endfor %}
+
+<br>    
+
+{% else %}
+
+<p >No se encontraron resultados.</p>
+
+{% endif %}
+
+<div style="margin: 1%;">
+
+<a style="text-decoration: none" href="{% url "demandado" %}"><input type="submit" value="Volver"></a>
+
+</div>
+    
+{% endblock %}
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,3 +64,4 @@
 
 </body>
 </html>
+-->

@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+{% extends 'padre.html' %}
+{% load static %}
+{% block contbusqueda %}
+
+<h2>Resultados de la busqueda por actor</h2>
+
+{% if actor %}
+ 
+{% for actor in actor %}
+
+<li>{{actor.apellido}}, {{actor.nombre}}</li>
+       
+{% endfor %}
+  
+{% else %}
+
+<p>No se encontraron resultados.</p>
+
+{% endif %}
+
+<div style="margin: 1%;">
+
+<a style="text-decoration: none" href="{% url "actor" %}"><input type="submit" value="Volver"></a>
+
+</div>
+    
+{% endblock %}
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,3 +59,4 @@
 
 </body>
 </html>
+-->

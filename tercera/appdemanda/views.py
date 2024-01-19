@@ -277,11 +277,11 @@ def login_request (request):
             
             else:
 
-                return render (request, "index.html", {"mensaje" : f"Error usuario o contraseña para regustrarse"})
+                return render (request, "index.html", {"mensaje" : f"Error usuario o contraseña para registrarse"})
             
         else:
 
-            return render (request, "index.html", {"mensaje" : f"Error del formulario de registro"})
+            return render (request, "index.html", {"mensaje" : f"Usuario o contraseña erroneos"})
 
     form = AuthenticationForm()
 
